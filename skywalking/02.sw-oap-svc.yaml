@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: skywalking-oap-svc
+  labels:
+    app: skywalking-oap
+spec:
+  type: ClusterIP
+  selector:
+    app: skywalking-oap
+  ports:
+  - name: grpc
+    port: 11800
+  - name: rest
+    port: 12800
