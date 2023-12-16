@@ -18,8 +18,8 @@ spec:
       - name: kibana
         image: kibana:8.11.3
         env:
-        - name: CLUSTER_NAME
-          value: elasticsearch
+        - name: ELASTICSEARCH_HOSTS
+          value: "http://elasticsearch-svc.sre.svc.cluster.local:9200"
         ports:
         - containerPort: 5601
         readinessProbe:
@@ -29,10 +29,10 @@ spec:
           initialDelaySeconds: 20
           timeoutSeconds: 5
         volumeMounts:
-          - name: config
-            mountPath: /usr/share/kibana/config
-            readOnly: true
-      volumes:
         - name: config
-          configMap:
-            name: kibana-config
+          mountPath: /usr/share/kibana/config
+          readOnly: true
+      volumes:
+      - name: config
+        configMap:
+          name: kibana-config
