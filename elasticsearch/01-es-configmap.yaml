@@ -8,5 +8,8 @@ data:
   elasticsearch.yml: |
     xpack.security.enabled: false
     xpack.security.http.ssl.enabled: false
-    network.host: 127.0.0.1
-    discovery.seed_hosts: ["127.0.0.1"]
+    network.host: 0.0.0.0
+    http.port: 9200
+    transport.port: 9300
+    # network.host: 127.0.0.1
+    # discovery.seed_hosts: ["127.0.0.1"]
