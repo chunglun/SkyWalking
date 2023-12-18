@@ -31,3 +31,6 @@ spec:
       - name: config
         configMap:
           name: elasticsearch-config
+          items:
+            - key: elasticsearch.yml
+              path: elasticsearch.yml
