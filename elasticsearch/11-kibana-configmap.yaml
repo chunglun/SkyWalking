@@ -9,4 +9,6 @@ data:
     server.name: kibana
     server.host: "0.0.0.0"
     server.port: 5601
-    elasticsearch.hosts: "http://elasticsearch-svc.sre.svc.cluster.local:9200"
+    elasticsearch.hosts: ["http://elasticsearch-svc.sre.svc.cluster.local:9200"]
+    elasticsearch.ssl.verficationMode: none
+    xpack.security.enabled: false
